@@ -357,7 +357,7 @@ if ((event.body.toLowerCase() == "I love you") || (event.body.toLowerCase() == "
     var msg = {
        
       body: `🍂✨${name}✨🍂\n\n${rand}
-     *★᭄𝗢𝘄𝗻𝗲𝗿 ཫ༄𒁍𝐁𝐈𝐓𝐓𝐔 𝐗 𝐕𝐀𝐑𝐒𝐇𝐀 ✦`
+     *★᭄𝗢𝘄𝗻𝗲𝗿 ཫ༄𒁍𝐑𝐀𝐉 𝐗𝐖𝐃 >😈 ✦`
     }
     return api.sendMessage(msg, threadID, messageID);
   };
