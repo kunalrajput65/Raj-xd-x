@@ -1,1 +1,20 @@
-
+"vi": {
+        "missingTag": "[ PAY ] Bạn phải tag người cần chuyển tiền",
+        "overTagLength": "[ PAY ] Vui lòng chỉ tag một người duy nhất",
+        "userNotExist": "[ PAY ] Người dùng bạn cần chuyển không tồn tại trong hệ thống!",
+        "invalidInput": "[ PAY ] Số tiền bạn nhập không phù hợp để chuyển",
+        "payerNotExist": "[ PAY ] Hiện tại bạn không tồn tại trong hệ thống, vui lòng chờ 5 giây sau đó thử lại",
+        "notEnoughMoney": "[ PAY ] Bạn không đủ tiền để thực hiện giao dịch!",
+        "paySuccess": "[ PAY ] Đã chuyển thành công %1$ (15% tax) cho người dùng: %2",
+        "error": "[ PAY ] Đã xảy ra lỗi không mong muốn trong lúc thực hiện giao dịch"
+    },
+    "en": {
+        "missingTag": "[ PAY ] No recipient tagged.",
+        "overTagLength": "[ PAY ] You have to tag at no more than one recipient.",
+        "userNotExist": "[ PAY ] Invalid recipient(s).",
+        "invalidInput": "[ PAY ] Invailid amount.",
+        "payerNotExist": "[ PAY ] Please wait 5 seconds to be fully registered as right now you are not a member yet.",
+        "notEnoughMoney": "[ PAY ] Insufficient fund. Please check your amount.",
+        "paySuccess": "[ PAY ] Successfully transfered %1$ to %2 (15% tax included)",
+        "error": "[ PAY ] Unknown error occured, please contact administrator."
+    }
