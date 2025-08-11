@@ -54,19 +54,19 @@ if ((event.body.toLowerCase() == "put") || (event.body.toLowerCase() == "Putt"))
      };
 
         if ((event.body.toLowerCase() == "❤️") || (event.body.toLowerCase() == "💚")) {
-       return api.sendMessage("🖤🧡💜💙🤎🤍", threadID);
+       return api.sendMessage("एकदम भालू दिखते हो आज काल 😬", threadID);
      };
 
         if ((event.body.toLowerCase() == "🧡") || (event.body.toLowerCase() == "🤎")) {
-       return api.sendMessage("❤️🖤🤍🤎💚💜", threadID);
+       return api.sendMessage("एक लात में दीवार तोड़ कर गायब 🥱", threadID);
      };
 
         if ((event.body.toLowerCase() == "💜") || (event.body.toLowerCase() == "💙")) {
-       return api.sendMessage("💚🤎🤍🖤❤️🧡", threadID);
+       return api.sendMessage("तेरा फोन चोरी करके भाग जाएंगे मोची 🫣", threadID);
      };
 
            if ((event.body.toLowerCase() == "🖤") || (event.body.toLowerCase() == "🤍")) {
-       return api.sendMessage("❤️🧡💛💚💙💜🤎", threadID);
+       return api.sendMessage("में बैठा बैंक में तू बैठा rod pe 😂", threadID);
      };
 
         if ((event.body.toLowerCase() == "👻") || (event.body.toLowerCase() == "👻👻")) {
