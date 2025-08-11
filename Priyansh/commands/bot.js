@@ -73,7 +73,7 @@ if ((event.body.toLowerCase() == "put") || (event.body.toLowerCase() == "Putt"))
        return api.sendMessage("Ari mori maiyya e ka dekh liyo👻💀", threadID);
      };
 
-        if ((event.body.toLowerCase() == "🙈") || (event.body.toLowerCase() == "🙊")) {
+        if ((event.body.toLowerCase() == "tujhe kon bola ") || (event.body.toLowerCase() == "🙊")) {
        return api.sendMessage("Sch Me Bander He Hai 😂", threadID);
      };
 
