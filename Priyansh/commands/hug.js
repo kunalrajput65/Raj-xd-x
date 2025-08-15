@@ -1,9 +1,14 @@
+/**
+* @author Zeeshan Altaf
+* @warn Do not edit code or edit credits
+* @Dont Change This Credits Otherwisw Your Bot Lol
+*/
 module.exports.config = {
-    name: "hug",
+    name: "gale",
     version: "3.1.1",
     hasPermssion: 0,
-    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-    description: "Hug 🥰",
+    credits: "Zeeshan Altaf",
+    description: "Dont Change This Credits Otherwisw Your Bot Is Lol",
     commandCategory: "img",
     usages: "[@mention]",
     cooldowns: 5,
@@ -22,7 +27,7 @@ module.exports.onLoad = async() => {
     const dirMaterial = __dirname + `/cache/canvas/`;
     const path = resolve(__dirname, 'cache/canvas', 'hugv1.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.ibb.co/3YN3T1r/q1y28eqblsr21.jpg", path);
+    if (!existsSync(path)) await downloadFile("https://i.ibb.co/qnybhWS/Screenshot-20230522-032830-2.jpg", path);
 }
 
 async function makeImage({ one, two }) {
@@ -66,9 +71,10 @@ module.exports.run = async function ({ event, api, args }) {
     const fs = global.nodemodule["fs-extra"];
     const { threadID, messageID, senderID } = event;
     const mention = Object.keys(event.mentions);
-    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
+    if (!mention[0]) return api.sendMessage("Jani jis ko ap ny gale milne  hai usy mention kro         *★᭄𝗖𝗿𝗲𝗱𝗶𝘁'𝘀  ཫ༄𒁍≛⃝R̆̈Ă̈J̆̈ X̶D̶", threadID, messageID);
     else {
         const one = senderID, two = mention[0];
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "                                           𝐌𝐀𝐃𝐄 𝐁𝐘 𝐑𝐀𝐉 𝐗𝐖𝐃 𝐓𝐇𝐀𝐊𝐔𝐑 ", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
       }
+
