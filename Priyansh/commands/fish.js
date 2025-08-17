@@ -1,48 +1,46 @@
-module.exports.config = {
-	name: "fish",
-	version: "1.0.0",
-	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Sell own capital",
-	commandCategory: "Economy",
-    cooldowns: 5,
-    envConfig: {
-        cooldownTime: 1000000
+module.exports = {
+  config: {
+    name: "edit",
+    aliases: [],
+    role: 0,
+    author: "ChatGpt",
+    countDown: 5,
+    longDescription: "",
+    category: "image",
+    guide: {
+      en: "/edit make this image black white"
     }
+  },
+  onStart: async function ({ message, api, args, event }) {
+    if (!event.messageReply || !event.messageReply.attachments || !event.messageReply.attachments[0]) {
+      return message.reply("📸| Please reply to an image to edit it.");
+    }
+
+    if (!args[0]) {
+      return message.reply("📝| Please provide a prompt.");
+    }
+
+    const prompt = encodeURIComponent(args.join(" "));
+    const imgurl = encodeURIComponent(event.messageReply.attachments[0].url);
+    const geditUrl = `https://smfahim.xyz/gedit?prompt=${prompt}&url=${imgurl}`;
+
+    api.setMessageReaction("🦆", event.messageID, () => {}, true);
+
+    message.reply("🔄| Editing image, please wait...", async (err, info) => {
+      try {
+        const attachment = await global.utils.getStreamFromURL(geditUrl);
+        message.reply({ 
+          body: `✅| Here is your edited image!`, 
+          attachment: attachment 
+        });
+
+        let ui = info.messageID;          
+        message.unsend(ui);
+        api.setMessageReaction("✅", event.messageID, () => {}, true);
+      } catch (error) {
+        message.reply("❌| There was an error editing your image.");
+        console.error(error);
+      }
+    });
+  }
 };
-
-module.exports.languages = {
-    
-        
-    "en": {
-        "cooldown": "You have worked today, to avoid exhaustion please come back after: %1 minute(s) %2 second(s).",
-        "rewarded": "You've got big fish again today, and been sold for: %2$",
-        "job1": "Fishing",
-    }
-}
-
-module.exports.run = async ({ event, api, Currencies, getText }) => {
-    const { threadID, messageID, senderID } = event;
-    
-    const cooldown = global.configModule[this.config.name].cooldownTime;
-    let data = (await Currencies.getData(senderID)).data || {};
-    if (typeof data !== "undefined" && cooldown - (Date.now() - data.workTime) > 0) {
-        var time = cooldown - (Date.now() - data.workTime),
-            minutes = Math.floor(time / 20000),
-            seconds = ((time % 20000) / 500).toFixed(0);
-        
-		return api.sendMessage(getText("cooldown", minutes, (seconds < 10 ? "0" + seconds : seconds)), event.threadID, event.messageID);
-    }
-    else {
-        const job = [
-            getText("Fishing"),
-        ];
-        const amount = Math.floor(Math.random() * 1000000);
-        return api.sendMessage(getText("rewarded", job[Math.floor(Math.random() * job.length)], amount), threadID, async () => {
-            await Currencies.increaseMoney(senderID, parseInt(amount));
-            data.workTime = Date.now();
-            await Currencies.setData(event.senderID, { data });
-            return;
-        }, messageID);
-    }     
-}
