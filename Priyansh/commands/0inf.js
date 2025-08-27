@@ -27,8 +27,8 @@ module.exports.run = async function ({ api, event }) {
 
   // Your personal Imgur + anime links
   const imgLinks = [
-    "https://i.imgur.com/wQle4SW.jpeg",
-    "https://i.imgur.com/7iReiuZ.jpeg",
+    "https://i.imgur.com/HafQH6C.gif",
+    "https://i.imgur.com/y6ZCClE.jpeg",
   ];
 
   const chosenImage = imgLinks[Math.floor(Math.random() * imgLinks.length)];
